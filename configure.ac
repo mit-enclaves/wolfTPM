@@ -64,7 +64,7 @@ AC_CHECK_FUNCS([gethostbyname getaddrinfo gettimeofday inet_ntoa memset socket])
 AC_CHECK_LIB([network],[socket])
 
 # Thread local storage
-AX_TLS([thread_ls_on=yes],[thread_ls_on=no])
+# AX_TLS([thread_ls_on=yes],[thread_ls_on=no])
 AS_IF([test "x$thread_ls_on" = "xyes"],[AM_CFLAGS="$AM_CFLAGS -DHAVE_THREAD_LS"])
 
 # DEBUG
