@@ -385,7 +385,8 @@ typedef int64_t  INT64;
     #if defined(WOLFTPM_LINUX_DEV) || defined(WOLFTPM_SWTPM) || defined(WOLFTPM_WINAPI)
     #define TPM_TIMEOUT_TRIES 0
     #else
-    #define TPM_TIMEOUT_TRIES 1000000
+    // HACK: 100x increase in retries to support slow discrete TPMs
+    #define TPM_TIMEOUT_TRIES 100000000
     #endif
 #endif
 
